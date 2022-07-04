@@ -1,20 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import GlobalStyles from "./styles";
-import Pages from "./pages";
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import GlobalStyles from './styles'
+import Pages from './pages'
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 
 const client = new ApolloClient({
-  uri: "https://graphql-tut-cats.herokuapp.com/",
+  uri: 'https://graphql-tut-cats-server.herokuapp.com/',
   cache: new InMemoryCache(),
-  name: "web",
-  version: "1.0",
-});
+  name: 'web',
+  version: '1.0',
+})
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <GlobalStyles />
-    <Pages />
+    <GlobalStyles/>
+    <Pages/>
   </ApolloProvider>,
-  document.getElementById("root")
-);
+  document.getElementById('root'),
+)
